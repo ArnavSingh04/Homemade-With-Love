@@ -1,0 +1,100 @@
+body, .corporate-wrapper {
+  background: #C7D1C5 !important;
+}
+
+.corporate-wrapper {
+  padding: 3rem 1.5rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #000000;
+}
+
+.corporate-hero h1 {
+  color: #000000;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.corporate-hero .intro {
+  color: #000000;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.why-choose-us {
+  padding: 2rem 0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.why-choose-us h2 {
+  color: #000000;
+  margin-bottom: 0.8rem;
+}
+
+.why-choose-us p {
+  color: #000000;
+}
+
+.process-section {
+  padding: 2rem 0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.process-section h2 {
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.process-section p {
+  color: #000000;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step {
+  background-color: #A9C39C;
+  border-left: 6px solid #6E8B5F;
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.step:hover {
+  background-color: #94AF87;
+}
+
+.step h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+.step p {
+  margin: 0.5rem 0 0;
+  color: #000000;
+}
+
+.cta-corporate {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cta-button {
+  background-color: #6E8B5F;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #5c744d;
+}

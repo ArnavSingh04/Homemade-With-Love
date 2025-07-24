@@ -1,0 +1,164 @@
+/* -------- Base -------- */
+.home {
+  font-family: 'Georgia', serif;
+  background-color: #C7D1C5; /* Soft Sage full background */
+  color: #000000; /* Black text */
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* -------- Hero Section -------- */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #6B8E4E; /* Darker herbal green */
+  color: #000000;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #5C7E42; /* Even darker on hover */
+}
+
+.cta-button:focus {
+  outline: 2px solid #D9BFF2; /* Lavender focus ring for keyboard users */
+  outline-offset: 3px;
+}
+
+/* -------- Journey Section -------- */
+.journey {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.journey h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.journey .read-more a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.journey .read-more a:hover {
+  color: #333;
+}
+
+/* -------- Unique Value Section -------- */
+.unique {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.unique h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.unique .promise {
+  font-style: italic;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.icon-box {
+  background: #C0D9A7; /* Herbal Green card background */
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  color: #000000;
+  border: 2px solid #D9BFF2; /* Lavender decorative border */
+}
+
+.icon-box:hover {
+  transform: translateY(-5px);
+}
+
+.icon-box span {
+  font-size: 2rem;
+}
+
+.icon-box h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+/* -------- Testimonials -------- */
+.testimonials {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+
+.testimonial-carousel blockquote {
+  max-width: 600px;
+  margin: 2rem auto;
+  font-style: italic;
+  background: #C0D9A7;
+  border-left: 4px solid #D9BFF2; /* Lavender highlight */
+  padding: 1.5rem;
+  color: #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.testimonial-carousel cite {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* -------- Final CTA -------- */
+.final-cta {
+  text-align: center;
+  background-color: #C0D9A7;
+  padding: 4rem 2rem;
+  color: #000000;
+  border-top: 2px solid #D9BFF2;
+}
+
+.final-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}

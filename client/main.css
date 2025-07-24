@@ -1,0 +1,134 @@
+/* Variables */
+:root {
+  --sage: #C7D1C5;
+  --herbal-green: #C0D9A7;
+  --lavender: #D9BFF2;
+  --dark-green: #678d58;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--sage);
+  color: var(--black);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  color: var(--black);
+}
+
+/* Layout */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Section Headings */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  border-left: 4px solid var(--dark-green);
+}
+
+/* Home Section */
+.home-container {
+  padding: 2rem;
+}
+
+.intro-section h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+}
+
+.tagline {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--dark-green);
+  margin-bottom: 2rem;
+}
+
+.bio-section p {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Certificate Section */
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.certificate-card {
+  background-color: var(--herbal-green);
+  border: 2px solid var(--dark-green);
+  border-radius: 12px;
+  padding: 1rem;
+  height: 400px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certificate-card img,
+.certificate-card embed {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* Social Links */
+.links-section {
+  margin-top: 2.5rem;
+}
+
+.links-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.links-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--dark-green);
+}
+
+.social-link:hover {
+  color: #4e6f3d;
+}
+
+.social-link svg {
+  font-size: 1.4rem;
+}
