@@ -92,7 +92,7 @@ export const About = () => {
           </p>
         </div>
 
-        <a href="/products" className="about-button">
+        <a href="/#/ProductsServices" className="about-button">
           Discover Our Creations
         </a>
       </div>

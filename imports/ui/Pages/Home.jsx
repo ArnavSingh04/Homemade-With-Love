@@ -8,7 +8,7 @@ export const Home = () => {
       <section className="hero">
         <h1>Crafting Joy, Naturally. Welcome to Homemade With Love.</h1>
         <p>Where Every Creation is a Hug, a Memory, a Story.</p>
-        <a href="#journey" className="cta-button">Discover Our World</a>
+        <a href="/#/about" className="cta-button">Discover Our World</a>
       </section>
 
       {/* Heartfelt Journey */}
@@ -82,7 +82,7 @@ export const Home = () => {
       {/* Final CTA */}
       <section className="final-cta">
         <h2>Let’s Create Something Beautiful Together</h2>
-        <a href="/contact" className="cta-button">Get in Touch</a>
+        <a href="/#/contact" className="cta-button">Get in Touch</a>
       </section>
     </div>
   )

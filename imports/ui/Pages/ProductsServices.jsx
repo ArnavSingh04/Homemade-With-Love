@@ -6,8 +6,15 @@ import "./Productsservices.css";
 export const ProductsServices = () => {
   return (
     <section className="products-services-wrapper">
-      <div className="intro-section"> 
-        <h1 className="headline" style={{ textAlign: "center", fontSize: "2.5rem", display: "inline-block" }}>
+      <div className="intro-section">
+        <h1
+          className="headline"
+          style={{
+            textAlign: "center",
+            fontSize: "2.5rem",
+            display: "inline-block"
+          }}
+        >
           Gifting & Creations: Thoughtfully Designed, Lovingly Made.
         </h1>
         <div className="section-divider" />
@@ -19,7 +26,10 @@ export const ProductsServices = () => {
         </p>
       </div>
 
-      <div className="collection-section" style={{ textAlign: "center", backgroundColor:"var(--sage)"}}>
+      <div
+        className="collection-section"
+        style={{ textAlign: "center", backgroundColor: "var(--sage)" }}
+      >
         <h2>Custom Gift Hampers: Uniquely Yours</h2>
         <p>
           For moments that truly matter, we craft custom gift hampers that tell
@@ -27,7 +37,7 @@ export const ProductsServices = () => {
           curate every element to perfection, reflecting your vision and
           recipient's delight.
         </p>
-        <Link to="/contact?type=custom-hamper" className="cta-link">
+        <Link to="/#/contact" className="cta-link">
           Dream Your Perfect Gift: Enquire About a Custom Hamper
         </Link>
       </div>
@@ -46,7 +56,7 @@ export const ProductsServices = () => {
               free from harsh chemicals, offers a wholesome embrace for your
               skin.
             </p>
-            <Link to="/gallery/skinsational" className="cta-sub-link">
+            <Link to="/#/contact" className="cta-sub-link">
               Explore Skinsational Range
             </Link>
           </div>
@@ -57,7 +67,7 @@ export const ProductsServices = () => {
               delectable desserts and traditional pickles, crafted with
               authentic goodness.
             </p>
-            <Link to="/gallery/edibles" className="cta-sub-link">
+            <Link to="/#/contact" className="cta-sub-link">
               Explore Edible Range
             </Link>
           </div>
@@ -68,7 +78,7 @@ export const ProductsServices = () => {
               collection of custom-designed boxes, elegant trays and charming
               baskets for every gift.
             </p>
-            <Link to="/gallery/packaging" className="cta-sub-link">
+            <Link to="/#/contact" className="cta-sub-link">
               Explore Packaging Options
             </Link>
           </div>
@@ -76,7 +86,7 @@ export const ProductsServices = () => {
       </div>
 
       <div className="cta-section">
-        <Link to="/contact?type=custom-hamper" className="main-cta-button">
+        <Link to="/#/contact" className="main-cta-button">
           Explore Our Collections - Dream Your Perfect Gift
         </Link>
       </div>
