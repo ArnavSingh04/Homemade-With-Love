@@ -1,9 +1,10 @@
 /* Variables */
 :root {
-  --sage: #C7D1C5;
+  --sage: #ADC1A1;
   --herbal-green: #C0D9A7;
   --lavender: #D9BFF2;
   --dark-green: #678d58;
+  --olive-green: #355E3B;
   --white: #ffffff;
   --black: #000000;
 }
@@ -17,7 +18,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--sage);
+  background-color: var(--white);
   color: var(--black);
   line-height: 1.6;
 }
@@ -45,7 +46,7 @@ section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   padding-left: 0.5rem;
-  border-left: 4px solid var(--dark-green);
+  border-left: 4px solid var(--sage);
 }
 
 /* Home Section */
@@ -62,7 +63,7 @@ section h2 {
 .tagline {
   font-size: 1.3rem;
   font-style: italic;
-  color: var(--dark-green);
+  color: var(--sage);
   margin-bottom: 2rem;
 }
 
@@ -80,8 +81,8 @@ section h2 {
 }
 
 .certificate-card {
-  background-color: var(--herbal-green);
-  border: 2px solid var(--dark-green);
+  background-color: var(--sage);
+  border: 2px solid var(--olive-green);
   border-radius: 12px;
   padding: 1rem;
   height: 400px;
@@ -122,11 +123,11 @@ section h2 {
   gap: 0.5rem;
   font-weight: 600;
   font-size: 1.1rem;
-  color: var(--dark-green);
+  color: var(--sage);
 }
 
 .social-link:hover {
-  color: #4e6f3d;
+  color: var(--olive-green);
 }
 
 .social-link svg {

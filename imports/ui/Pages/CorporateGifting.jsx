@@ -7,7 +7,8 @@ export const CorporateGifting = () => {
   return (
     <section className="corporate-wrapper">
       <div className="corporate-hero">
-        <h1>Corporate Gifting: Elevate Your Brand, Naturally.</h1>
+        <h1 className="corporate-title">Corporate Gifting: Elevate Your Brand, Naturally.</h1>
+        <div className="section-divider" />
         <p className="intro">
           Leave a lasting impression with corporate gifts that speak volumes
           about your values. <strong>Homemade With Love</strong> crafts bespoke

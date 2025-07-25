@@ -1,5 +1,18 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --sage: #C7D1C5;
+  --olive-green: #678d58;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+}
+
 .about-container {
-  color: #000000; /* Black text */
+  color: var(--black);
+  background-color: var(--white);
   padding: 4rem 1.5rem;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -15,10 +28,10 @@
   font-weight: 700;
   margin-bottom: 2rem;
   line-height: 1.3;
-  border-bottom: 4px solid #D9BFF2; /* Lavender accent underline */
+  border-bottom: 4px solid var(--olive-green); /* Replacing lavender with olive green */
   display: inline-block;
   padding-bottom: 0.5rem;
-  color: #000000; /* explicitly black */
+  color: var(--black);
 }
 
 .about-text {
@@ -29,12 +42,12 @@
 }
 
 .founder-section {
-  background-color: #ADC1A1; /* Herbal Green */
-  color: #000;
+  background-color: var(--sage); /* Updated */
+  color: var(--black);
   padding: 2rem;
   border-radius: 1.5rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  text-align: justify; /* Justified */
   transition: transform 0.3s ease;
 }
 
@@ -46,21 +59,22 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #000000;
+  color: var(--black);
 }
 
 .founder-text {
   font-size: 1rem;
   line-height: 1.7;
   white-space: pre-line;
+  text-align: justify;
 }
 
 .about-button {
   display: inline-block;
   margin-top: 2rem;
   padding: 0.75rem 1.75rem;
-  background-color: #355E3B; /* Darker green */
-  color: #fff;
+  background-color: var(--olive-green); /* Updated */
+  color: var(--white);
   border-radius: 999px;
   font-size: 1.1rem;
   font-weight: 500;
@@ -69,14 +83,13 @@
 }
 
 .about-button:hover {
-  background-color: #2a4b2f;
+  background-color: #557548; /* Slightly darker olive hover */
 }
 
-/* Optional lavender line separator */
 .section-divider {
   height: 4px;
   width: 80px;
-  background-color: #D9BFF2;
+  background-color: var(--olive-green); /* Replacing lavender */
   margin: 2rem auto;
   border-radius: 2px;
 }

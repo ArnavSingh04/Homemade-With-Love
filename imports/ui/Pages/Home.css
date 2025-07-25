@@ -1,10 +1,11 @@
 /* -------- Base -------- */
 .home {
   font-family: 'Georgia', serif;
-  background-color: #C7D1C5; /* Soft Sage full background */
+  background-color: #ffffff; /* White background */
   color: #000000; /* Black text */
   line-height: 1.6;
   scroll-behavior: smooth;
+  text-align: justify;
 }
 
 /* -------- Hero Section -------- */
@@ -27,8 +28,8 @@
 
 .cta-button {
   display: inline-block;
-  background-color: #6B8E4E; /* Darker herbal green */
-  color: #000000;
+  background-color: #708238; /* Olive green */
+  color: #ffffff;
   padding: 0.8rem 2rem;
   font-size: 1rem;
   border-radius: 2rem;
@@ -39,11 +40,11 @@
 }
 
 .cta-button:hover {
-  background-color: #5C7E42; /* Even darker on hover */
+  background-color: #5C6F2B; /* Darker olive */
 }
 
 .cta-button:focus {
-  outline: 2px solid #D9BFF2; /* Lavender focus ring for keyboard users */
+  outline: 2px solid #D9BFF2; /* Lavender focus ring */
   outline-offset: 3px;
 }
 
@@ -95,13 +96,14 @@
 }
 
 .icon-box {
-  background: #C0D9A7; /* Herbal Green card background */
+  background: #A9C39C; /* Sage card background */
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
   color: #000000;
   border: 2px solid #D9BFF2; /* Lavender decorative border */
+  text-align: justify;
 }
 
 .icon-box:hover {
@@ -134,12 +136,13 @@
   max-width: 600px;
   margin: 2rem auto;
   font-style: italic;
-  background: #C0D9A7;
-  border-left: 4px solid #D9BFF2; /* Lavender highlight */
+  background: #A9C39C; /* Sage card */
+  border-left: 4px solid #D9BFF2;
   padding: 1.5rem;
   color: #000000;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: justify;
 }
 
 .testimonial-carousel cite {
@@ -152,7 +155,7 @@
 /* -------- Final CTA -------- */
 .final-cta {
   text-align: center;
-  background-color: #C0D9A7;
+  background-color: #A9C39C; /* Sage */
   padding: 4rem 2rem;
   color: #000000;
   border-top: 2px solid #D9BFF2;

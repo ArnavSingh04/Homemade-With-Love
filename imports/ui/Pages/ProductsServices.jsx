@@ -6,10 +6,11 @@ import "./Productsservices.css";
 export const ProductsServices = () => {
   return (
     <section className="products-services-wrapper">
-      <div className="intro-section">
-        <h1 className="headline">
+      <div className="intro-section"> 
+        <h1 className="headline" style={{ textAlign: "center", fontSize: "2.5rem", display: "inline-block" }}>
           Gifting & Creations: Thoughtfully Designed, Lovingly Made.
         </h1>
+        <div className="section-divider" />
         <p className="intro-text">
           Whether you envision a grand, bespoke gesture or seek exquisite,
           naturally crafted treasures, our collections are designed to make
@@ -18,7 +19,7 @@ export const ProductsServices = () => {
         </p>
       </div>
 
-      <div className="collection-section" style={{ textAlign: "center" }}>
+      <div className="collection-section" style={{ textAlign: "center", backgroundColor:"var(--sage)"}}>
         <h2>Custom Gift Hampers: Uniquely Yours</h2>
         <p>
           For moments that truly matter, we craft custom gift hampers that tell
@@ -71,7 +72,7 @@ export const ProductsServices = () => {
               Explore Packaging Options
             </Link>
           </div>
-        </div>  
+        </div>
       </div>
 
       <div className="cta-section">
