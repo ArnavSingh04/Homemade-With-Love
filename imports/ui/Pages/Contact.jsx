@@ -65,9 +65,6 @@ export const Contact = () => {
         <p>
           <strong>E:</strong> homemadewithlove@rediffmail.com
         </p>
-        <p>
-          <strong>Location:</strong> Delhi NCR
-        </p>
       </div>
 
       <form className="contact-form" onSubmit={handleSubmit}>
