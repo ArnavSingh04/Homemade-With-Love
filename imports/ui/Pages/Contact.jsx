@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Meteor } from "meteor/meteor";
 import "./contactus.css";
 
 export const Contact = () => {
@@ -24,11 +25,29 @@ export const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Thank you! We'll get back to you shortly.");
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        alert("Thank you! We'll get back to you shortly.");
+      } else {
+        alert("Oops! Something went wrong.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to send. Please try again.");
+    }
   };
+
 
   return (
     <div className="contact-wrapper">
@@ -57,6 +76,7 @@ export const Contact = () => {
           type="text"
           name="name"
           id="name"
+          value={formData.name}
           required
           onChange={handleChange}
         />
@@ -66,6 +86,7 @@ export const Contact = () => {
           type="email"
           name="email"
           id="email"
+          value={formData.email}
           required
           onChange={handleChange}
         />
@@ -73,7 +94,13 @@ export const Contact = () => {
         <label htmlFor="phone">
           Your Phone <span className="optional">(Optional)</span>:
         </label>
-        <input type="tel" name="phone" id="phone" onChange={handleChange} />
+        <input
+          type="tel"
+          name="phone"
+          id="phone"
+          value={formData.phone}
+          onChange={handleChange}
+        />
 
         <label>I'm Interested In:</label>
         <div className="checkbox-group">
@@ -86,7 +113,12 @@ export const Contact = () => {
             "A general inquiry / just saying Hello!"
           ].map((interest, index) => (
             <label key={index} className="checkbox-label">
-              <input type="checkbox" value={interest} onChange={handleChange} />{" "}
+              <input
+                type="checkbox"
+                value={interest}
+                checked={formData.interests.includes(interest)}
+                onChange={handleChange}
+              />
               {interest}
             </label>
           ))}
@@ -97,6 +129,7 @@ export const Contact = () => {
           name="message"
           id="message"
           rows="5"
+          value={formData.message}
           placeholder="Share details—occasion, recipients, theme, ideas..."
           onChange={handleChange}
         ></textarea>
@@ -110,7 +143,7 @@ export const Contact = () => {
         <p className="follow-label">Follow Us:</p>
         <div className="social-links">
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/homemadewithlove_hwl?igsh=cWNxbDIxNjl3YnNw"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -118,7 +151,7 @@ export const Contact = () => {
           </a>
           <span className="divider">|</span>
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/share/1F9R2k4vzH/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
           >
