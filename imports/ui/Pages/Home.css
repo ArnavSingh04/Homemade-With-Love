@@ -11,7 +11,7 @@
 /* -------- Hero Section -------- */
 .hero {
   text-align: center;
-  padding: 6rem 2rem;
+  padding: 3.5rem 2rem;
 }
 
 .hero h1 {
@@ -50,7 +50,7 @@
 
 /* -------- Journey Section -------- */
 .journey {
-  padding: 4rem 2rem;
+  padding: 1.5rem 2rem;
   text-align: center;
 }
 
@@ -70,9 +70,17 @@
   color: #333;
 }
 
+.journey p {
+  font-size: 1.4rem;
+  color: #000000;
+  padding: 0 6rem;
+  text-align: justify;
+  text-align-last: center;
+}
+
 /* -------- Unique Value Section -------- */
 .unique {
-  padding: 4rem 2rem;
+  padding: 4.5rem 2rem;
   text-align: center;
 }
 
@@ -86,6 +94,7 @@
   font-style: italic;
   margin-bottom: 2rem;
   color: #000000;
+  font-size: 1.5rem;
 }
 
 .icon-grid {
@@ -122,7 +131,7 @@
 
 /* -------- Testimonials -------- */
 .testimonials {
-  padding: 4rem 2rem;
+  padding: 1rem 2rem;
   text-align: center;
 }
 
@@ -155,13 +164,15 @@
 /* -------- Final CTA -------- */
 .final-cta {
   text-align: center;
-  background-color: #A9C39C; /* Sage */
-  padding: 4rem 2rem;
+  padding: 0rem 2rem;
   color: #000000;
-  border-top: 2px solid #D9BFF2;
 }
 
 .final-cta h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
+}
+
+.hero-logo-container {
+  margin-top: 2rem;
 }

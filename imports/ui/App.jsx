@@ -8,6 +8,7 @@ import { About } from "./Pages/About";
 import { Contact } from "./Pages/Contact";
 import { CorporateGifting } from "./Pages/CorporateGifting";
 import { ProductsServices } from "./Pages/ProductsServices";
+import { Footer } from "./Pages/Footer";
 
 export const App = () => {
   return (
@@ -21,6 +22,7 @@ export const App = () => {
           <Route path="/CorporateGifting" element={<CorporateGifting />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

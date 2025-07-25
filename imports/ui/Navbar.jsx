@@ -1,4 +1,3 @@
-// Navbar.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -16,7 +15,20 @@ export const Navbar = () => {
     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)"
   };
 
-  const brandStyle = {
+  const brandContainerStyle = {
+    display: "flex",
+    alignItems: "center",
+    gap: "0.6rem",
+    textDecoration: "none"
+  };
+
+  const logoStyle = {
+    width: "40px",
+    height: "40px",
+    objectFit: "contain"
+  };
+
+  const brandTextStyle = {
     fontWeight: "bold",
     fontSize: "1.8rem",
     color: "#000000",
@@ -52,8 +64,9 @@ export const Navbar = () => {
 
   return (
     <nav style={navStyle}>
-      <Link to="/" style={brandStyle}>
-        Homemade With Love
+      <Link to="/" style={brandContainerStyle}>
+        <img src="/homemade-logo.jpg" alt="Logo" style={logoStyle} />
+        <span style={brandTextStyle}>Homemade With Love</span>
       </Link>
       <div style={linkContainerStyle}>
         {navLinks.map((item, i) => (
