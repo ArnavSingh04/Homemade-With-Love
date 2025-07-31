@@ -7,8 +7,8 @@ export const Navbar = () => {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "1rem 2rem",
-    backgroundColor: "#C7D1C5", // soft sage
-    color: "#000000", // black text
+    backgroundColor: "#ADC1A1", // soft sage
+    color: "#000000",
     position: "sticky",
     top: 0,
     zIndex: 1000,
@@ -18,22 +18,30 @@ export const Navbar = () => {
   const brandContainerStyle = {
     display: "flex",
     alignItems: "center",
-    gap: "0.6rem",
+    gap: "0.8rem",
     textDecoration: "none"
   };
 
   const logoStyle = {
-    width: "40px",
-    height: "40px",
+    width: "42px",
+    height: "42px",
     objectFit: "contain"
   };
 
   const brandTextStyle = {
-    fontWeight: "bold",
     fontSize: "1.8rem",
-    color: "#000000",
-    textDecoration: "none",
-    fontFamily: "serif"
+    fontWeight: 600,
+    fontFamily: "'Playfair Display', serif",
+    color: "#2F4F4F",
+    letterSpacing: "0.5px",
+    lineHeight: 1.2
+  };
+
+  const subTextStyle = {
+    fontSize: "0.8rem",
+    color: "#333",
+    fontStyle: "italic",
+    fontFamily: "Georgia, serif"
   };
 
   const linkContainerStyle = {
@@ -52,10 +60,11 @@ export const Navbar = () => {
   };
 
   const linkHoverStyle = {
-    backgroundColor: "#D9BFF2" // lavender
+    backgroundColor: "#355E3B"
   };
 
   const navLinks = [
+    { to: "/", label: "Home" },
     { to: "/about", label: "About Us" },
     { to: "/ProductsServices", label: "Products & Services" },
     { to: "/CorporateGifting", label: "Corporate Gifting" },
@@ -65,8 +74,25 @@ export const Navbar = () => {
   return (
     <nav style={navStyle}>
       <Link to="/" style={brandContainerStyle}>
-        <img src="/homemade-logo.jpg" alt="Logo" style={logoStyle} />
-        <span style={brandTextStyle}>Homemade With Love</span>
+        <img src="/homemade-logo.png" alt="Logo" style={logoStyle} />
+        <div>
+          <span style={brandTextStyle}>
+            <span style={{ fontStyle: "italic", color: "#4B6043" }}>
+              Homemade
+            </span>{" "}
+            <span
+              style={{ fontSize: "1.5rem", fontWeight: 100, color: "#4B6043", fontStyle: "italic" }}
+            >
+              With
+            </span>{" "}
+            <span
+              style={{ color: "#4B6043", fontStyle: "italic" }}
+            >
+              Love
+            </span>
+          </span>
+          <div style={subTextStyle}>Crafted Gifting & Skincare</div>
+        </div>
       </Link>
       <div style={linkContainerStyle}>
         {navLinks.map((item, i) => (

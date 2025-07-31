@@ -7,7 +7,9 @@ export const CorporateGifting = () => {
   return (
     <section className="corporate-wrapper">
       <div className="corporate-hero">
-        <h1 className="corporate-title">Corporate Gifting: Elevate Your Brand, Naturally.</h1>
+        <h1 className="corporate-title">
+          Corporate Gifting: Elevate Your Brand, Naturally.
+        </h1>
         <div className="section-divider" />
         <p className="intro">
           Leave a lasting impression with corporate gifts that speak volumes
@@ -30,45 +32,84 @@ export const CorporateGifting = () => {
       <div className="process-section">
         <h2>Our Process</h2>
         <p>
-          For our corporate patrons, we’ve refined a process that’s both
+          For our corporate patrons, we've refined a process that's both
           creative and seamless:
         </p>
-        <div className="process-steps">
-          <div className="step">
-            <h3>1. The Vision Call</h3>
-            <p>
-              We start with a conversation to understand your objectives,
-              budget, and timelines.
-            </p>
+        <div className="process-flowchart">
+          <div className="flowchart-step">
+            <div className="step-number">1</div>
+            <div className="step-content">
+              <h3>The Vision Call</h3>
+              <p>
+                We start with a conversation to understand your objectives,
+                budget, and timelines.
+              </p>
+            </div>
           </div>
-          <div className="step">
-            <h3>2. Tailored Concept & Curated Selection</h3>
-            <p>
-              Based on your needs, we present a bespoke concept with curated
-              product options — from our artisanal range to specially sourced
-              items.
-            </p>
+
+          <div className="flowchart-arrow">
+            <div className="arrow-line"></div>
+            <div className="arrow-head"></div>
           </div>
-          <div className="step">
-            <h3>3. Design & Customization</h3>
-            <p>
-              We create mockups that seamlessly incorporate your branding and
-              personalized elements.
-            </p>
+
+          <div className="flowchart-step">
+            <div className="step-number">2</div>
+            <div className="step-content">
+              <h3>Tailored Concept & Curated Selection</h3>
+              <p>
+                Based on your needs, we present a bespoke concept with curated
+                product options — from our artisanal range to specially sourced
+                items.
+              </p>
+            </div>
           </div>
-          <div className="step">
-            <h3>4. Crafting with Care</h3>
-            <p>
-              With designs finalized, we handcraft and assemble each gift with
-              meticulous care and attention to detail.
-            </p>
+
+          <div className="flowchart-arrow">
+            <div className="arrow-line"></div>
+            <div className="arrow-head"></div>
           </div>
-          <div className="step">
-            <h3>5. Seamless Delivery</h3>
-            <p>
-              Your completed gifts are carefully delivered to your specified
-              locations, ready to leave a lasting impression.
-            </p>
+
+          <div className="flowchart-step">
+            <div className="step-number">3</div>
+            <div className="step-content">
+              <h3>Design & Customization</h3>
+              <p>
+                We create mockups that seamlessly incorporate your branding and
+                personalized elements.
+              </p>
+            </div>
+          </div>
+
+          <div className="flowchart-arrow">
+            <div className="arrow-line"></div>
+            <div className="arrow-head"></div>
+          </div>
+
+          <div className="flowchart-step">
+            <div className="step-number">4</div>
+            <div className="step-content">
+              <h3>Crafting with Care</h3>
+              <p>
+                With designs finalized, we handcraft and assemble each gift with
+                meticulous care and attention to detail.
+              </p>
+            </div>
+          </div>
+
+          <div className="flowchart-arrow">
+            <div className="arrow-line"></div>
+            <div className="arrow-head"></div>
+          </div>
+
+          <div className="flowchart-step">
+            <div className="step-number">5</div>
+            <div className="step-content">
+              <h3>Seamless Delivery</h3>
+              <p>
+                Your completed gifts are carefully delivered to your specified
+                locations, ready to leave a lasting impression.
+              </p>
+            </div>
           </div>
         </div>
       </div>

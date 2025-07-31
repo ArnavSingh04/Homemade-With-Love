@@ -1,6 +1,6 @@
 /* -------- Base -------- */
 .home {
-  font-family: 'Georgia', serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #ffffff; /* White background */
   color: #000000; /* Black text */
   line-height: 1.6;
@@ -15,20 +15,20 @@
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: #000000;
   margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: #000000;
   margin-bottom: 2rem;
 }
 
 .cta-button {
   display: inline-block;
-  background-color: #708238; /* Olive green */
+  background-color: #355E3B; /* Olive green */
   color: #ffffff;
   padding: 0.8rem 2rem;
   font-size: 1rem;
@@ -37,10 +37,6 @@
   transition: background-color 0.3s ease;
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button:hover {
-  background-color: #5C6F2B; /* Darker olive */
 }
 
 .cta-button:focus {
@@ -55,23 +51,27 @@
 }
 
 .journey h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #000000;
 }
 
-.journey .read-more a {
+
+.read-more a {
   color: #000000;
   font-weight: bold;
   text-decoration: underline;
+  display: inline-block; /* 🔑 This enables transform to work */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.journey .read-more a:hover {
-  color: #333;
+.read-more a:hover {
+  color: #355E3B; /* Olive green hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .journey p {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #000000;
   padding: 0 6rem;
   text-align: justify;
@@ -85,7 +85,7 @@
 }
 
 .unique h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: #000000;
 }
@@ -105,14 +105,15 @@
 }
 
 .icon-box {
-  background: #A9C39C; /* Sage card background */
+  background: var(--sage); /* Sage card background */
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
   color: #000000;
   border: 2px solid #D9BFF2; /* Lavender decorative border */
-  text-align: justify;
+  text-align: center;
+  justify-content: center;
 }
 
 .icon-box:hover {
@@ -125,7 +126,7 @@
 
 .icon-box h3 {
   margin: 1rem 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #000000;
 }
 
@@ -136,7 +137,7 @@
 }
 
 .testimonials h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
   color: #000000;
 }
@@ -145,7 +146,7 @@
   max-width: 600px;
   margin: 2rem auto;
   font-style: italic;
-  background: #A9C39C; /* Sage card */
+  background: var(--sage); /* Sage card */
   border-left: 4px solid #D9BFF2;
   padding: 1.5rem;
   color: #000000;
@@ -169,7 +170,7 @@
 }
 
 .final-cta h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1.5rem;
 }
 

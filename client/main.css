@@ -1,9 +1,6 @@
 /* Variables */
 :root {
   --sage: #ADC1A1;
-  --herbal-green: #C0D9A7;
-  --lavender: #D9BFF2;
-  --dark-green: #678d58;
   --olive-green: #355E3B;
   --white: #ffffff;
   --black: #000000;
@@ -17,7 +14,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: var(--white);
   color: var(--black);
   line-height: 1.6;
@@ -25,7 +22,6 @@ body {
 
 a {
   text-decoration: none;
-  color: inherit;
   transition: color 0.3s ease;
 }
 
@@ -43,7 +39,7 @@ h1, h2, h3, h4, h5 {
 
 /* Section Headings */
 section h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   padding-left: 0.5rem;
   border-left: 4px solid var(--sage);
@@ -55,13 +51,13 @@ section h2 {
 }
 
 .intro-section h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: var(--black);
 }
 
 .tagline {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-style: italic;
   color: var(--sage);
   margin-bottom: 2rem;
@@ -69,7 +65,6 @@ section h2 {
 
 .bio-section p {
   margin-bottom: 1rem;
-  color: #333;
 }
 
 /* Certificate Section */
@@ -122,7 +117,7 @@ section h2 {
   align-items: center;
   gap: 0.5rem;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--sage);
 }
 
@@ -131,5 +126,5 @@ section h2 {
 }
 
 .social-link svg {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }

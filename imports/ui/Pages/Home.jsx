@@ -19,7 +19,7 @@ export const Home = () => {
         </a>
         <div className="hero-logo-container">
           <img
-            src="/homemade-logo.jpg"
+            src="/homemade-logo.png"
             alt="Homemade With Love Logo"
             style={logoStyle}
           />

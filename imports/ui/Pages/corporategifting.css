@@ -1,8 +1,8 @@
 :root {
   --white: #ffffff;
   --black: #000000;
-  --sage: #C7D1C5;
-  --olive-green: #678d58;
+  --sage: #ADC1A1;
+  --olive-green: #355E3B;
 }
 
 body,
@@ -47,7 +47,7 @@ body,
 
 .corporate-hero .intro {
   color: var(--black);
-  font-size: 1.2rem;
+  font-size: 1rem;
   max-width: 800px;
   margin-bottom: 2rem;
   text-align: justify;
@@ -88,36 +88,95 @@ body,
 .process-section p {
   color: var(--black);
   text-align: justify;
+  margin-bottom: 2rem;
 }
 
-.process-steps {
+/* Flowchart Styles */
+.process-flowchart {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0;
+  margin-top: 2rem;
 }
 
-.step {
-  background-color: var(--sage);
-  border-left: 6px solid var(--olive-green);
-  padding: 1rem 1.2rem;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-  text-align: justify;
+.flowchart-step {
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border: 3px solid var(--sage);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.step:hover {
-  background-color: #e0e7e0;
+.flowchart-step:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--olive-green);
 }
 
-.step h3 {
+.step-number {
+  background-color: var(--olive-green);
+  color: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--black);
+  font-weight: 600;
+}
+
+.step-content p {
   margin: 0;
-  font-size: 1.1rem;
   color: var(--black);
+  text-align: justify;
+  line-height: 1.5;
 }
 
-.step p {
-  margin: 0.5rem 0 0;
-  color: var(--black);
+/* Flowchart Arrows */
+.flowchart-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+  height: 40px;
+}
+
+.arrow-line {
+  width: 3px;
+  height: 25px;
+  background-color: var(--olive-green);
+  border-radius: 2px;
+}
+
+.arrow-head {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid var(--olive-green);
+  margin-top: -1px;
 }
 
 .cta-corporate {
@@ -137,4 +196,46 @@ body,
 
 .cta-button:hover {
   background-color: #557548;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flowchart-step {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+  
+  .step-number {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .step-content h3 {
+    text-align: center;
+  }
+  
+  .step-content p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .flowchart-step {
+    padding: 1rem;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .step-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .step-content p {
+    font-size: 0.9rem;
+  }
 }

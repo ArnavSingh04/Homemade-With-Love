@@ -1,8 +1,8 @@
 :root {
   --white: #ffffff;
   --black: #000000;
-  --sage: #C7D1C5;
-  --olive-green: #678d58;
+  --sage: #ADC1A1;
+  --olive-green: #355E3B;
 }
 
 body {
@@ -35,7 +35,7 @@ body {
 }
 
 .about-text {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.8;
   text-align: justify;
   margin-bottom: 3rem;
@@ -56,7 +56,7 @@ body {
 }
 
 .founder-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--black);
@@ -76,14 +76,14 @@ body {
   background-color: var(--olive-green); /* Updated */
   color: var(--white);
   border-radius: 999px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .about-button:hover {
-  background-color: #557548; /* Slightly darker olive hover */
+  background-color: var(--olive-green); /* Slightly darker olive hover */
 }
 
 .section-divider {

@@ -28,7 +28,12 @@ export const ProductsServices = () => {
 
       <div
         className="collection-section"
-        style={{ textAlign: "center", backgroundColor: "var(--sage)" }}
+        style={{
+          textAlign: "justify",
+          backgroundColor: "var(--sage)",
+          textAlignLast: "center",
+          margin: "5 auto"
+        }}
       >
         <h2>Custom Gift Hampers: Uniquely Yours</h2>
         <p>
@@ -48,39 +53,66 @@ export const ProductsServices = () => {
           Explore our cherished range of artisanal products, each made with
           uncompromising quality and a passion for natural goodness.
         </p>
-        <div className="sub-collections">
-          <div className="collection-card">
-            <h3>Skinsational: Nature's Embrace</h3>
-            <p>
-              Pure indulgence, naturally crafted: our handmade skincare range,
-              free from harsh chemicals, offers a wholesome embrace for your
-              skin.
-            </p>
-            <Link to="/#/contact" className="cta-sub-link">
-              Explore Skinsational Range
-            </Link>
+
+        <div className="zigzag-collections">
+          {/* Row 1: Content Left, Image Right */}
+          <div className="zigzag-row">
+            <div className="collection-card">
+              <h3>Skinsational: Nature's Embrace</h3>
+              <p>
+                Pure indulgence, naturally crafted: our handmade skincare range,
+                free from harsh chemicals, offers a wholesome embrace for your
+                skin.
+              </p>
+              <Link to="/#/contact" className="cta-sub-link">
+                Explore Skinsational Range
+              </Link>
+            </div>
+            <div className="collection-image">
+              <img
+                src="/skinsational.jpg"
+                alt="Skinsational skincare products"
+              />
+            </div>
           </div>
-          <div className="collection-card">
-            <h3>Edible Range: A Taste of Home, With Love</h3>
-            <p>
-              Wholesome flavours, handmade memories: from artisan rubs to
-              delectable desserts and traditional pickles, crafted with
-              authentic goodness.
-            </p>
-            <Link to="/#/contact" className="cta-sub-link">
-              Explore Edible Range
-            </Link>
+
+          {/* Row 2: Image Left, Content Right */}
+          <div className="zigzag-row">
+            <div className="collection-image">
+              <img src="/food.jpg" alt="Edible range products" />
+            </div>
+            <div className="collection-card">
+              <h3>Edible Range: A Taste of Home, With Love</h3>
+              <p>
+                Wholesome flavours, handmade memories: from artisan rubs to
+                delectable desserts and traditional pickles, crafted with
+                authentic goodness.
+              </p>
+              <Link to="/#/contact" className="cta-sub-link">
+                Explore Edible Range
+              </Link>
+            </div>
           </div>
-          <div className="collection-card">
-            <h3>Packaging with Panache</h3>
-            <p>
-              The art of presentation, perfected: discover our exquisite
-              collection of custom-designed boxes, elegant trays and charming
-              baskets for every gift.
-            </p>
-            <Link to="/#/contact" className="cta-sub-link">
-              Explore Packaging Options
-            </Link>
+
+          {/* Row 3: Content Left, Image Right */}
+          <div className="zigzag-row">
+            <div className="collection-card">
+              <h3>Packaging with Panache</h3>
+              <p>
+                The art of presentation, perfected: discover our exquisite
+                collection of custom-designed boxes, elegant trays and charming
+                baskets for every gift.
+              </p>
+              <Link to="/#/contact" className="cta-sub-link">
+                Explore Packaging Options
+              </Link>
+            </div>
+            <div className="collection-image">
+              <img
+                src="/gifting.jpg"
+                alt="Elegant packaging options"
+              />
+            </div>
           </div>
         </div>
       </div>
