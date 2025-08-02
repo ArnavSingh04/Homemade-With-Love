@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Meteor } from "meteor/meteor";
 import { Instagram, Facebook } from "lucide-react";
 import "./contactus.css";
 
@@ -29,13 +28,21 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      interests: formData.interests.join(", "),
+      message: formData.message
+    };
+
     try {
-      const response = await fetch("/api/send-email", {
+      const response = await fetch("https://formspree.io/f/xyzpdzla", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
 
       if (response.ok) {
