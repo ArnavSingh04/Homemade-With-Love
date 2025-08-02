@@ -10,6 +10,7 @@
   "dependencies": {
     "@babel/runtime": "^7.20.7",
     "body-parser": "^2.2.0",
+    "lucide-react": "^0.534.0",
     "meteor-node-stubs": "^1.2.22",
     "nodemailer": "^7.0.5",
     "react": "^18.2.0",

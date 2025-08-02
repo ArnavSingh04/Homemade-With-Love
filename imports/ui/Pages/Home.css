@@ -130,37 +130,98 @@
   color: #000000;
 }
 
-/* -------- Testimonials -------- */
-.testimonials {
-  padding: 1rem 2rem;
+.testimonials-section {
+  padding: 5rem 2rem;
+  background-color: var(--ivory);
   text-align: center;
 }
 
-.testimonials h2 {
+.testimonials-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #000000;
+  margin-bottom: 3rem;
 }
 
-.testimonial-carousel blockquote {
-  max-width: 600px;
-  margin: 2rem auto;
+.testimonial-carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.testimonial-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 2rem; /* Add equal padding on both sides */
+  gap: 2rem; /* Consistent spacing between cards */
+  scroll-snap-type: x mandatory;
+  justify-content: flex-start;
+  -ms-overflow-style: none;
+}
+
+.testimonial-card {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+  background: var(--sage);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   font-style: italic;
-  background: var(--sage); /* Sage card */
-  border-left: 4px solid #D9BFF2;
-  padding: 1.5rem;
-  color: #000000;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
-.testimonial-carousel cite {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-  color: #000000;
+.testimonial-card:hover {
+  transform: translateY(-4px);
 }
+
+.testimonial-author {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+
+.arrow.left {
+  left: 0;
+}
+
+.arrow.right {
+  right: 0;
+}
+
+.testimonial-spacer {
+  flex: 0 0 calc((100vw - 80%)/2); /* 80% = width of testimonial-card */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: #ffffff;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
 
 /* -------- Final CTA -------- */
 .final-cta {

@@ -1,5 +1,5 @@
-import React from "react";
 import "./Home.css";
+import React, { useRef, useState, useEffect } from "react";
 
 export const Home = () => {
   const logoStyle = {
@@ -8,11 +8,60 @@ export const Home = () => {
     height: "auto"
   };
 
+  const carouselRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [cardIndex, setCardIndex] = useState(0);
+
+  const scrollToCardIndex = (index) => {
+    const carousel = carouselRef.current;
+    const cards = carousel.querySelectorAll(".testimonial-card");
+    if (!cards.length) return;
+
+    const card = cards[index];
+    const scrollLeft =
+      card.offsetLeft - (carousel.offsetWidth - card.offsetWidth) / 2;
+
+    carousel.scrollTo({
+      left: scrollLeft,
+      behavior: "smooth"
+    });
+
+    setCardIndex(index);
+  };
+
+  const scrollLeft = () => {
+    const newIndex = Math.max(cardIndex - 1, 0);
+    scrollToCardIndex(newIndex);
+  };
+
+  const scrollRight = () => {
+    const carousel = carouselRef.current;
+    const cards = carousel.querySelectorAll(".testimonial-card");
+    const newIndex = Math.min(cardIndex + 1, cards.length - 1);
+    scrollToCardIndex(newIndex);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered && carouselRef.current) {
+        const cards = carouselRef.current.querySelectorAll(".testimonial-card");
+        const nextIndex = (cardIndex + 1) % cards.length;
+        scrollToCardIndex(nextIndex);
+      }
+    }, 2500); // scroll every 4s
+
+    return () => clearInterval(interval);
+  }, [isHovered, cardIndex]);
+
+
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <h1>Crafting Joy, Naturally.<br /> Welcome to Homemade With Love.</h1>
+        <h1>
+          Crafting Joy, Naturally.
+          <br /> Welcome to Homemade With Love.
+        </h1>
         <p>Where Every Creation is a Hug, a Memory, a Story.</p>
         <a href="/#/about" className="cta-button">
           Discover Our World
@@ -89,42 +138,76 @@ export const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="testimonials">
-        <h2>Our Patrons Say It Best</h2>
-        <div className="testimonial-carousel">
-          <blockquote>
-            <p>
-              "Each little box was a work of art and the skincare inside was
-              absolute bliss!"
-            </p>
-            <cite>— Ananya Sharma, Wedding Planner</cite>
-          </blockquote>
-          <blockquote>
-            <p>
-              "The sustainable packaging left a wonderful impression. Simply
-              outstanding!"
-            </p>
-            <cite>— Rajesh M, Head of HR, Marquee</cite>
-          </blockquote>
-          <blockquote>
-            <p>
-              "The Skinsational range has been a revelation — natural and truly
-              effective."
-            </p>
-            <cite>— Priya Verma, Skincare Enthusiast</cite>
-          </blockquote>
-          <blockquote>
-            <p>
-              "The custom mithai boxes were divine — true homemade perfection!"
-            </p>
-            <cite>— Kiran Dev, Celebration Host</cite>
-          </blockquote>
-          <blockquote>
-            <p>
-              "They crafted a visual story that elevated our entire tea brand."
-            </p>
-            <cite>— Arjun Nayar, Brew & Bloom Teas</cite>
-          </blockquote>
+      <section className="testimonials-section">
+        <h2>Our patrons say it best</h2>
+
+        <div
+          className="testimonial-carousel-container"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <button
+            className="arrow left"
+            onClick={scrollLeft}
+            aria-label="Previous Testimonial"
+          >
+            &#10094;
+          </button>
+
+          <div className="testimonial-carousel" ref={carouselRef}>
+            <div className="testimonial-spacer" /> {/* Left Spacer */}
+            <div className="testimonial-card">
+              <p>
+                "Each little box was a work of art and the skincare inside was
+                absolute bliss!"
+              </p>
+              <cite>— Ananya Sharma, Wedding Planner</cite>
+            </div>
+            <div className="testimonial-card">
+              <p>
+                "The sustainable packaging left a wonderful impression. Simply
+                outstanding!"
+              </p>
+              <cite>— Rajesh M, Head of HR, Marquee</cite>
+            </div>
+            <div className="testimonial-card">
+              <p>
+                "The Skinsational range has been a revelation — natural and
+                truly effective."
+              </p>
+              <cite>— Priya Verma, Skincare Enthusiast</cite>
+            </div>
+            <div className="testimonial-card">
+              <p>
+                "The custom mithai boxes were divine — true homemade
+                perfection!"
+              </p>
+              <cite>— Kiran Dev, Celebration Host</cite>
+            </div>
+            <div className="testimonial-card">
+              <p>
+                "They crafted a visual story that elevated our entire tea
+                brand."
+              </p>
+              <cite>— Arjun Nayar, Brew & Bloom Teas</cite>
+            </div>
+            <div className="testimonial-card">
+              <p>
+                "Their attention to detail and personalized touch made our gifts
+                unforgettable."
+              </p>
+              <cite>— Natasha Iyer, Corporate Gifting Lead</cite>
+            </div>
+            <div className="testimonial-spacer" /> {/* Left Spacer */}
+          </div>
+
+          <button
+            className="arrow right"
+            onClick={scrollRight}
+            aria-label="Next Testimonial"
+          >
+            &#10095;
+          </button>
         </div>
       </section>
 

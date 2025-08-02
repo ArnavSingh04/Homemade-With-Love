@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Meteor } from "meteor/meteor";
+import { Instagram, Facebook } from "lucide-react";
 import "./contactus.css";
 
 export const Contact = () => {
@@ -47,7 +48,6 @@ export const Contact = () => {
       alert("Failed to send. Please try again.");
     }
   };
-
 
   return (
     <div className="contact-wrapper">
@@ -116,7 +116,7 @@ export const Contact = () => {
                 checked={formData.interests.includes(interest)}
                 onChange={handleChange}
               />
-              {interest}
+              <span className="checkbox-text">{interest}</span>
             </label>
           ))}
         </div>
@@ -143,16 +143,20 @@ export const Contact = () => {
             href="https://www.instagram.com/homemadewithlove_hwl?igsh=cWNxbDIxNjl3YnNw"
             target="_blank"
             rel="noopener noreferrer"
+            className="social-link instagram-link"
           >
-            Instagram
+            <Instagram size={20} />
+            <span>Instagram</span>
           </a>
           <span className="divider">|</span>
           <a
             href="https://www.facebook.com/share/1F9R2k4vzH/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
+            className="social-link facebook-link"
           >
-            Facebook
+            <Facebook size={20} />
+            <span>Facebook</span>
           </a>
         </div>
       </div>
