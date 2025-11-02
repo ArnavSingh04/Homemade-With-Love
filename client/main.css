@@ -83,6 +83,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -93,6 +94,28 @@ body {
   font-size: var(--fs-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#react-target {
+  width: 100%;
+  height: 100%;
+}
+
+.app-wrapper {
+  zoom: 0.75;
+  
+}
+
+/* For Firefox - use transform since zoom support may vary */
+@-moz-document url-prefix() {
+  .app-wrapper {
+    zoom: 1;
+    transform: scale(0.75);
+    transform-origin: center top;
+  }
 }
 
 main {

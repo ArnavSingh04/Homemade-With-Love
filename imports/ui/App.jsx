@@ -12,18 +12,20 @@ import { Footer } from "./Pages/Footer";
 
 export const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/ProductsServices" element={<ProductsServices />} />
-          <Route path="/CorporateGifting" element={<CorporateGifting />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+    <div className="app-wrapper">
+      <Router>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/ProductsServices" element={<ProductsServices />} />
+            <Route path="/CorporateGifting" element={<CorporateGifting />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </div>
   );
 };
