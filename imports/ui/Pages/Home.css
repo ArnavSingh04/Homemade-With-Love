@@ -11,9 +11,14 @@
 .hero {
   text-align: center;
   padding: var(--spacing-3xl) var(--spacing-lg);
-  background: linear-gradient(135deg, var(--white) 0%, var(--gray-light) 100%);
+  background: linear-gradient(135deg, var(--sage-lighter) 0%, var(--sage-light) 50%, var(--white) 100%);
   position: relative;
   overflow: hidden;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero::before {
@@ -23,8 +28,25 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(173, 193, 161, 0.1) 0%, transparent 50%);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.70)),
+    url("/images/WhatsApp Image 2025-11-02 at 7.37.57 PM (2).jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.33;
+  z-index: 0;
+  animation: slowZoom 25s ease-in-out infinite;
   pointer-events: none;
+}
+
+@keyframes slowZoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .hero h1 {
@@ -55,6 +77,38 @@
   text-align: center;
   max-width: var(--container-lg);
   margin: 0 auto;
+  position: relative;
+  background-color: var(--white);
+}
+
+.journey::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+    url("/images/WhatsApp Image 2025-11-02 at 7.37.48 PM.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .journey::before,
+  .hero::before {
+    background-attachment: scroll;
+  }
+}
+
+.journey > * {
+  position: relative;
+  z-index: 1;
 }
 
 .journey h2 {
@@ -96,7 +150,47 @@
 .unique {
   padding: var(--spacing-3xl) var(--spacing-lg);
   text-align: center;
-  background-color: var(--gray-light);
+  background: linear-gradient(135deg, var(--sage-lighter) 0%, var(--white) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.unique::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(173, 193, 161, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 15s ease-in-out infinite;
+}
+
+.unique::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(184, 212, 184, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 18s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+}
+
+.unique > * {
+  position: relative;
+  z-index: 1;
 }
 
 .unique h2 {
@@ -129,18 +223,52 @@
   box-shadow: var(--shadow-md);
   transition: all var(--transition-base);
   color: var(--text-dark);
-  border: 2px solid var(--sage);
+  border: 3px solid var(--sage-light);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(173, 193, 161, 0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.icon-box:hover::before {
+  left: 100%;
+}
+
+.icon-box:nth-child(1) {
+  border-color: var(--sage-dark);
+}
+
+.icon-box:nth-child(2) {
+  border-color: var(--mint-green);
+}
+
+.icon-box:nth-child(3) {
+  border-color: var(--sage-light);
+}
+
+.icon-box:nth-child(4) {
+  border-color: var(--olive-green-light);
 }
 
 .icon-box:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl);
   border-color: var(--olive-green);
+  background: linear-gradient(135deg, var(--white) 0%, var(--sage-lighter) 100%);
 }
 
 .icon-box span {
@@ -165,8 +293,29 @@
 /* -------- Testimonials Section -------- */
 .testimonials-section {
   padding: var(--spacing-3xl) var(--spacing-lg);
-  background: linear-gradient(180deg, var(--white) 0%, var(--sage-light) 100%);
+  background: linear-gradient(180deg, var(--white) 0%, var(--sage-lighter) 50%, var(--white) 100%);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(173, 193, 161, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(184, 212, 184, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.testimonials-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .testimonials-section h2 {
@@ -211,14 +360,33 @@
   flex-direction: column;
   justify-content: center;
   min-height: 200px;
-  border: 2px solid var(--sage);
+  border: 3px solid var(--sage);
   transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sage-dark), var(--olive-green), var(--mint-green));
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+}
+
+.testimonial-card:hover::before {
+  transform: scaleX(1);
 }
 
 .testimonial-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-xl);
   border-color: var(--olive-green);
+  background: linear-gradient(135deg, var(--white) 0%, var(--sage-lighter) 100%);
 }
 
 .testimonial-card p {
@@ -281,7 +449,38 @@
   text-align: center;
   padding: var(--spacing-3xl) var(--spacing-lg);
   color: var(--text-dark);
-  background-color: var(--white);
+  background: linear-gradient(135deg, var(--sage-light) 0%, var(--sage-lighter) 50%, var(--mint-green-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.70)),
+    url("/images/WhatsApp Image 2025-11-02 at 7.37.57 PM (1).jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.22;
+  z-index: 0;
+  animation: slowZoom 20s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .final-cta::before {
+    background-attachment: scroll;
+  }
+}
+
+.final-cta > * {
+  position: relative;
+  z-index: 1;
 }
 
 .final-cta h2 {
@@ -294,6 +493,7 @@
 @media (max-width: 768px) {
   .hero {
     padding: var(--spacing-2xl) var(--spacing-md);
+    min-height: 50vh;
   }
 
   .journey {

@@ -1,5 +1,5 @@
 // ProductsServices.jsx
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Productsservices.css";
 
@@ -45,6 +45,53 @@ export const ProductsServices = () => {
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);
+  const galleryRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const isScrollingRef = useRef(false);
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    const gallery = galleryRef.current;
+    if (!gallery) return;
+
+    let scrollInterval;
+    const scrollSpeed = 0.0001; // pixels per frame - very slow, gentle scrolling
+
+    const scroll = () => {
+      if (!isHovered && gallery && !isScrollingRef.current) {
+        const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+        const currentScroll = gallery.scrollLeft;
+
+        if (currentScroll >= maxScroll - 1) {
+          // Reached the end, reset to start
+          isScrollingRef.current = true;
+          gallery.scrollTo({
+            left: 0,
+            behavior: "smooth"
+          });
+
+          // Wait for smooth scroll to complete before continuing
+          setTimeout(() => {
+            isScrollingRef.current = false;
+          }, 5000);
+        } else {
+          // Continue scrolling
+          gallery.scrollBy({
+            left: scrollSpeed,
+            behavior: "auto"
+          });
+        }
+      }
+    };
+
+    scrollInterval = setInterval(scroll, 1000); // Update every 100ms for very slow, gentle scrolling
+
+    return () => {
+      if (scrollInterval) {
+        clearInterval(scrollInterval);
+      }
+    };
+  }, [isHovered]);
 
   return (
     <section className="products-services-wrapper">
@@ -69,7 +116,7 @@ export const ProductsServices = () => {
           curate every element to perfection, reflecting your vision and
           recipient's delight.
         </p>
-        <Link to="/#/contact" className="cta-link">
+        <Link to="/contact" className="cta-link">
           Dream Your Perfect Gift: Enquire About a Custom Hamper
         </Link>
       </div>
@@ -78,10 +125,16 @@ export const ProductsServices = () => {
       <div className="gallery-section">
         <h2>Our Creations Gallery</h2>
         <p className="gallery-intro">
-          Browse through our collection of handcrafted products, elegant hampers,
-          and artisanal creations - each one made with love and attention to detail.
+          Browse through our collection of handcrafted products, elegant
+          hampers, and artisanal creations - each one made with love and
+          attention to detail.
         </p>
-        <div className="image-gallery">
+        <div
+          className="image-gallery"
+          ref={galleryRef}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           {imageFiles.map((image, index) => (
             <div
               key={index}
@@ -105,13 +158,13 @@ export const ProductsServices = () => {
       {selectedImage && (
         <div className="image-modal" onClick={() => setSelectedImage(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedImage(null)}>
+            <button
+              className="modal-close"
+              onClick={() => setSelectedImage(null)}
+            >
               &times;
             </button>
-            <img
-              src={`/images/${selectedImage}`}
-              alt="Full size product"
-            />
+            <img src={`/images/${selectedImage}`} alt="Full size product" />
           </div>
         </div>
       )}
@@ -133,7 +186,7 @@ export const ProductsServices = () => {
                 free from harsh chemicals, offers a wholesome embrace for your
                 skin.
               </p>
-              <Link to="/#/contact" className="cta-sub-link">
+              <Link to="/contact" className="cta-sub-link">
                 Explore Skinsational Range
               </Link>
             </div>
@@ -157,7 +210,7 @@ export const ProductsServices = () => {
                 delectable desserts and traditional pickles, crafted with
                 authentic goodness.
               </p>
-              <Link to="/#/contact" className="cta-sub-link">
+              <Link to="/contact" className="cta-sub-link">
                 Explore Edible Range
               </Link>
             </div>
@@ -172,22 +225,19 @@ export const ProductsServices = () => {
                 collection of custom-designed boxes, elegant trays and charming
                 baskets for every gift.
               </p>
-              <Link to="/#/contact" className="cta-sub-link">
+              <Link to="/contact" className="cta-sub-link">
                 Explore Packaging Options
               </Link>
             </div>
             <div className="collection-image">
-              <img
-                src="/gifting.jpg"
-                alt="Elegant packaging options"
-              />
+              <img src="/gifting.jpg" alt="Elegant packaging options" />
             </div>
           </div>
         </div>
       </div>
 
       <div className="cta-section">
-        <Link to="/#/contact" className="main-cta-button">
+        <Link to="/contact" className="main-cta-button">
           Explore Our Collections - Dream Your Perfect Gift
         </Link>
       </div>

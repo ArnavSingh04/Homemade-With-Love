@@ -1,5 +1,5 @@
 .products-services-wrapper {
-  background-color: var(--white);
+  background: linear-gradient(180deg, var(--white) 0%, var(--sage-lighter) 100%);
   color: var(--text-dark);
   font-family: var(--font-primary);
   max-width: var(--container-xl);
@@ -7,12 +7,33 @@
   padding: var(--spacing-xl) var(--spacing-lg);
   text-align: justify;
   text-align-last: center;
+  position: relative;
+}
+
+.products-services-wrapper::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 5% 10%, rgba(173, 193, 161, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 95% 90%, rgba(184, 212, 184, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Headline */
 .intro-section {
   text-align: center;
   margin-bottom: var(--spacing-2xl);
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, var(--sage-light) 0%, var(--sage-lighter) 100%);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .headline {
@@ -45,19 +66,41 @@
   margin-bottom: var(--spacing-xl);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  background-color: var(--white);
+  background: var(--white);
   transition: all var(--transition-base);
   text-align-last: center;
+  position: relative;
+  z-index: 1;
+  border: 3px solid var(--sage-light);
+  overflow: hidden;
+}
+
+.collection-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(173, 193, 161, 0.2), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none; /* Ensure it doesn't block clicks */
+  z-index: 0;
+}
+
+.collection-section:hover::before {
+  left: 100%;
 }
 
 .collection-section:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+  border-color: var(--olive-green);
 }
 
 .collection-section.custom-hampers {
-  background-color: var(--sage);
-  border: 2px solid var(--olive-green);
+  background: linear-gradient(135deg, var(--sage) 0%, var(--sage-light) 100%);
+  border: 3px solid var(--olive-green);
 }
 
 .collection-section h2 {
@@ -94,18 +137,58 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--sage);
+  background: linear-gradient(135deg, var(--sage) 0%, var(--sage-light) 100%);
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   transition: all var(--transition-base);
   text-align: center;
-  border: 2px solid var(--sage-dark);
+  border: 3px solid var(--sage-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-card:nth-child(odd) {
+  background: linear-gradient(135deg, var(--sage-light) 0%, var(--sage-lighter) 100%);
+  border-color: var(--sage);
+}
+
+.collection-card:nth-child(even) {
+  background: linear-gradient(135deg, var(--mint-green-light) 0%, var(--sage-lighter) 100%);
+  border-color: var(--mint-green);
+}
+
+.collection-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  transition: transform 0.6s ease;
+  transform: scale(0);
+  pointer-events: none; /* Ensure it doesn't block clicks */
+  z-index: 0;
+}
+
+.collection-card:hover::after {
+  transform: scale(1);
+}
+
+.collection-card a,
+.collection-card .cta-sub-link,
+.collection-section .cta-link,
+.cta-section .main-cta-button {
+  position: relative;
+  z-index: 10 !important; /* Ensure links are above pseudo-elements */
+  pointer-events: auto !important;
+  cursor: pointer;
 }
 
 .collection-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-xl);
   border-color: var(--olive-green);
 }
 
@@ -154,8 +237,12 @@
 .gallery-section {
   padding: var(--spacing-2xl) var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
-  background: linear-gradient(180deg, var(--white) 0%, var(--gray-light) 100%);
+  background: linear-gradient(135deg, var(--white) 0%, var(--sage-lighter) 100%);
   border-radius: var(--radius-lg);
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-lg);
+  border: 3px solid var(--sage);
 }
 
 .gallery-section h2 {
@@ -176,10 +263,33 @@
 }
 
 .image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: flex;
+  overflow-x: auto;
   gap: var(--spacing-md);
   margin-top: var(--spacing-xl);
+  padding: var(--spacing-sm) 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--sage) var(--white);
+}
+
+.image-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.image-gallery::-webkit-scrollbar-track {
+  background: var(--sage-lighter);
+  border-radius: var(--radius-sm);
+}
+
+.image-gallery::-webkit-scrollbar-thumb {
+  background: var(--sage);
+  border-radius: var(--radius-sm);
+}
+
+.image-gallery::-webkit-scrollbar-thumb:hover {
+  background: var(--olive-green);
 }
 
 .gallery-item {
@@ -187,10 +297,13 @@
   overflow: hidden;
   border-radius: var(--radius-md);
   cursor: pointer;
+  flex: 0 0 calc(16.666% - var(--spacing-md) * 5/6);
+  min-width: calc(16.666% - var(--spacing-md) * 5/6);
   aspect-ratio: 1;
   box-shadow: var(--shadow-md);
   transition: all var(--transition-base);
   background: var(--sage);
+  scroll-snap-align: start;
 }
 
 .gallery-item:hover {
@@ -307,8 +420,9 @@
     height: 300px;
   }
 
-  .image-gallery {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  .gallery-item {
+    flex: 0 0 calc(25% - var(--spacing-md) * 3/4);
+    min-width: calc(25% - var(--spacing-md) * 3/4);
   }
 }
 
@@ -338,9 +452,9 @@
     width: 100%;
   }
 
-  .image-gallery {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: var(--spacing-sm);
+  .gallery-item {
+    flex: 0 0 calc(33.333% - var(--spacing-md) * 2/3);
+    min-width: calc(33.333% - var(--spacing-md) * 2/3);
   }
 
   .gallery-section {
@@ -366,8 +480,9 @@
     height: 220px;
   }
 
-  .image-gallery {
-    grid-template-columns: 1fr;
+  .gallery-item {
+    flex: 0 0 calc(50% - var(--spacing-md) / 2);
+    min-width: calc(50% - var(--spacing-md) / 2);
   }
 
   .intro-text {

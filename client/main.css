@@ -3,13 +3,18 @@
    ============================================ */
 
 :root {
-  /* Color Palette */
+  /* Primary Color Palette - Green Theme */
   --sage: #ADC1A1;
   --sage-light: #C4D4B8;
+  --sage-lighter: #D9E5D1;
   --sage-dark: #9AAF8D;
   --olive-green: #355E3B;
   --olive-green-dark: #2a4b2f;
   --olive-green-light: #4a7a52;
+  --mint-green: #B8D4B8;
+  --mint-green-light: #D0E8D0;
+  
+  /* Neutral Colors */
   --white: #ffffff;
   --black: #000000;
   --gray-light: #f5f5f5;
