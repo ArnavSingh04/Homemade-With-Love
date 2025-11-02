@@ -5,6 +5,8 @@
   color: var(--text-dark);
   line-height: 1.7;
   scroll-behavior: smooth;
+  min-height: calc(100vh - 200px);
+  padding-bottom: 0;
 }
 
 /* -------- Hero Section -------- */
@@ -448,9 +450,11 @@
 .final-cta {
   text-align: center;
   padding: var(--spacing-3xl) var(--spacing-lg);
+  padding-bottom: var(--spacing-2xl);
   color: var(--text-dark);
   background: linear-gradient(135deg, var(--sage-light) 0%, var(--sage-lighter) 50%, var(--mint-green-light) 100%);
   position: relative;
+  margin-bottom: 0;
   overflow: hidden;
 }
 

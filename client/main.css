@@ -95,6 +95,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  background: transparent;
+  min-height: auto;
+}
+
 /* ============================================
    TYPOGRAPHY
    ============================================ */

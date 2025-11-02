@@ -14,7 +14,7 @@ export const App = () => {
   return (
     <Router>
       <Navbar />
-      <main style={{ minHeight: "calc(100vh - 200px)" }}>
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

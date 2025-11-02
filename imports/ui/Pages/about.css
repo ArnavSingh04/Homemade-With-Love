@@ -2,9 +2,11 @@
   color: var(--text-dark);
   background: linear-gradient(180deg, var(--white) 0%, var(--sage-lighter) 50%, var(--white) 100%);
   padding: var(--spacing-2xl) var(--spacing-lg);
+  padding-bottom: 0;
   font-family: var(--font-primary);
   position: relative;
   overflow: hidden;
+  min-height: calc(100vh - 200px);
 }
 
 .about-container::before {

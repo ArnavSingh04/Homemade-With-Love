@@ -1,10 +1,11 @@
 .contact-wrapper {
   background: var(--white);
   padding: var(--spacing-xl) var(--spacing-lg);
+  padding-bottom: var(--spacing-2xl);
   font-family: var(--font-primary);
   color: var(--text-dark);
   max-width: 800px;
-  margin: auto;
+  margin: var(--spacing-2xl) auto var(--spacing-lg);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   border: 3px solid var(--sage);
