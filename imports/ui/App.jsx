@@ -14,7 +14,7 @@ export const App = () => {
   return (
     <Router>
       <Navbar />
-      <div style={{ padding: "2rem" }}>
+      <main style={{ minHeight: "calc(100vh - 200px)" }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -22,8 +22,8 @@ export const App = () => {
           <Route path="/CorporateGifting" element={<CorporateGifting />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </Router>
   );
 };

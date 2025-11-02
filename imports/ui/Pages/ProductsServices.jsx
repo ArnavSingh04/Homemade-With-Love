@@ -1,20 +1,55 @@
 // ProductsServices.jsx
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Productsservices.css";
 
 export const ProductsServices = () => {
+  // Get all images from the images folder
+  const imageFiles = [
+    "WhatsApp Image 2025-11-02 at 7.37.48 PM (1).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.48 PM (2).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.48 PM.jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.49 PM (1).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.49 PM (2).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.49 PM (3).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.49 PM.jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.50 PM (1).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.50 PM (2).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.50 PM.jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.51 PM (1).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.51 PM (2).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.51 PM (3).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.51 PM.jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.52 PM (1).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.52 PM (2).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.52 PM (3).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.52 PM.jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.53 PM (1).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.53 PM (2).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.53 PM.jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.54 PM (1).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.54 PM (2).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.54 PM (3).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.54 PM.jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.55 PM (1).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.55 PM (2).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.55 PM.jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.56 PM (1).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.56 PM (2).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.56 PM (3).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.56 PM.jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.57 PM (1).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.57 PM (2).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.57 PM (3).jpeg",
+    "WhatsApp Image 2025-11-02 at 7.37.57 PM.jpeg"
+  ];
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <section className="products-services-wrapper">
       <div className="intro-section">
-        <h1
-          className="headline"
-          style={{
-            textAlign: "center",
-            fontSize: "2.5rem",
-            display: "inline-block"
-          }}
-        >
+        <h1 className="headline">
           Gifting & Creations: Thoughtfully Designed, Lovingly Made.
         </h1>
         <div className="section-divider" />
@@ -26,15 +61,7 @@ export const ProductsServices = () => {
         </p>
       </div>
 
-      <div
-        className="collection-section"
-        style={{
-          textAlign: "justify",
-          backgroundColor: "var(--sage)",
-          textAlignLast: "center",
-          margin: "5 auto"
-        }}
-      >
+      <div className="collection-section custom-hampers">
         <h2>Custom Gift Hampers: Uniquely Yours</h2>
         <p>
           For moments that truly matter, we craft custom gift hampers that tell
@@ -46,6 +73,48 @@ export const ProductsServices = () => {
           Dream Your Perfect Gift: Enquire About a Custom Hamper
         </Link>
       </div>
+
+      {/* Image Gallery Section */}
+      <div className="gallery-section">
+        <h2>Our Creations Gallery</h2>
+        <p className="gallery-intro">
+          Browse through our collection of handcrafted products, elegant hampers,
+          and artisanal creations - each one made with love and attention to detail.
+        </p>
+        <div className="image-gallery">
+          {imageFiles.map((image, index) => (
+            <div
+              key={index}
+              className="gallery-item"
+              onClick={() => setSelectedImage(image)}
+            >
+              <img
+                src={`/images/${image}`}
+                alt={`Product ${index + 1}`}
+                loading="lazy"
+              />
+              <div className="gallery-overlay">
+                <span>View Details</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Modal for full-size image */}
+      {selectedImage && (
+        <div className="image-modal" onClick={() => setSelectedImage(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setSelectedImage(null)}>
+              &times;
+            </button>
+            <img
+              src={`/images/${selectedImage}`}
+              alt="Full size product"
+            />
+          </div>
+        </div>
+      )}
 
       <div className="collection-section">
         <h2>Treasures from Our Home to Yours: Our Signature Collections</h2>
@@ -77,7 +146,7 @@ export const ProductsServices = () => {
           </div>
 
           {/* Row 2: Image Left, Content Right */}
-          <div className="zigzag-row">
+          <div className="zigzag-row reverse">
             <div className="collection-image">
               <img src="/food.jpg" alt="Edible range products" />
             </div>

@@ -1,130 +1,208 @@
-/* Variables */
+/* ============================================
+   DESIGN SYSTEM - Centralized Variables
+   ============================================ */
+
 :root {
+  /* Color Palette */
   --sage: #ADC1A1;
+  --sage-light: #C4D4B8;
+  --sage-dark: #9AAF8D;
   --olive-green: #355E3B;
+  --olive-green-dark: #2a4b2f;
+  --olive-green-light: #4a7a52;
   --white: #ffffff;
   --black: #000000;
+  --gray-light: #f5f5f5;
+  --gray: #e0e0e0;
+  --text-dark: #1a1a1a;
+  --text-light: rgba(0, 0, 0, 0.8);
+  
+  /* Typography */
+  --font-primary: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  --font-heading: 'Playfair Display', 'Georgia', serif;
+  
+  /* Font Sizes */
+  --fs-h1: clamp(2rem, 4vw, 3rem);
+  --fs-h2: clamp(1.75rem, 3vw, 2.5rem);
+  --fs-h3: clamp(1.5rem, 2.5vw, 2rem);
+  --fs-h4: clamp(1.25rem, 2vw, 1.5rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-tiny: 0.75rem;
+  
+  /* Spacing Scale */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+  
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.15);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Container Max Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
 }
 
-/* Reset & Base Styles */
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: var(--font-primary);
   background-color: var(--white);
-  color: var(--black);
-  line-height: 1.6;
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: var(--fs-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-light);
 }
 
 a {
   text-decoration: none;
-  transition: color 0.3s ease;
+  color: inherit;
+  transition: all var(--transition-base);
 }
 
-h1, h2, h3, h4, h5 {
-  font-weight: 700;
-  color: var(--black);
-}
+/* ============================================
+   BUTTONS & CTAs
+   ============================================ */
 
-/* Layout */
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-}
-
-/* Section Headings */
-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  padding-left: 0.5rem;
-  border-left: 4px solid var(--sage);
-}
-
-/* Home Section */
-.home-container {
-  padding: 2rem;
-}
-
-.intro-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--black);
-}
-
-.tagline {
-  font-size: 1.5rem;
-  font-style: italic;
-  color: var(--sage);
-  margin-bottom: 2rem;
-}
-
-.bio-section p {
-  margin-bottom: 1rem;
-}
-
-/* Certificate Section */
-.certificate-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.certificate-card {
-  background-color: var(--sage);
-  border: 2px solid var(--olive-green);
-  border-radius: 12px;
-  padding: 1rem;
-  height: 400px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.certificate-card img,
-.certificate-card embed {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 6px;
-}
-
-/* Social Links */
-.links-section {
-  margin-top: 2.5rem;
-}
-
-.links-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.links-grid {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.cta-button,
+.cta-link,
+.cta-sub-link,
+.main-cta-button,
+.contact-button,
+.about-button {
+  display: inline-block;
+  background-color: var(--olive-green);
+  color: var(--white);
+  padding: 0.875rem 2rem;
+  font-size: var(--fs-body);
   font-weight: 600;
-  font-size: 1rem;
-  color: var(--sage);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  font-family: var(--font-primary);
 }
 
-.social-link:hover {
-  color: var(--olive-green);
+.cta-button:hover,
+.cta-link:hover,
+.cta-sub-link:hover,
+.main-cta-button:hover,
+.contact-button:hover,
+.about-button:hover {
+  background-color: var(--olive-green-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
-.social-link svg {
-  font-size: 1.5rem;
+.cta-button:focus,
+.cta-link:focus,
+.cta-sub-link:focus,
+.main-cta-button:focus,
+.contact-button:focus,
+.about-button:focus {
+  outline: 2px solid var(--olive-green-light);
+  outline-offset: 3px;
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.section-divider {
+  height: 4px;
+  width: 80px;
+  background-color: var(--olive-green);
+  margin: var(--spacing-lg) auto;
+  border-radius: var(--radius-sm);
 }
